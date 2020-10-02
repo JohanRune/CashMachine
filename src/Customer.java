@@ -30,11 +30,18 @@ public class Customer extends Person{
     public void changeInterestOnAccount (Account account, double newInterest, String date,
                                          Employee employee){ //detta startar ett nytt kontoobjekt
         account.setStopDate(date);
-        Account accountNew = new Account(account.getAccountNumber(), newInterest, date, employee);
-        addAccount(accountNew); //se ovan.
+        Account accountNew = new Account(account.getNumberAccountLoan(), newInterest, date, employee);
+        addAccount(accountNew); //se metod ovan.
 
     }
 
+    public void changeInterestOnLoan (Loan loan, double newInterest, String date,
+                                         Employee employee){ //detta startar ett nytt kontoobjekt
+        loan.setStopDate(date);
+        Loan loanNew = new Loan(loan.getNumberAccountLoan(), newInterest, date, employee);
+        addLoan(loanNew); //se metod ovan.
+
+    }
 
 
 }

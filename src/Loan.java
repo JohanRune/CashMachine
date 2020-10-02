@@ -10,10 +10,9 @@ import java.util.List;
  * Copyright: MIT
  */
 public class Loan extends Interest{
-    List<Loan> loanList;
 
-    public Loan (int accountNumber, double interest, String startDate, Employee employee) {
-        super (accountNumber, interest, startDate, employee);
+    public Loan (int loanNumber, double interest, String startDate, Employee employeeWhoAccepted) {
+        super (loanNumber, interest, startDate, employeeWhoAccepted);
     }
 
 }
