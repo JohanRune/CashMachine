@@ -5,7 +5,7 @@
  * Project: IntelliJ IDEA
  * Copyright: MIT
  */
-public class Employee extends Person{
+public class Employee extends Person implements BankData2{
     private int salary;
 
     public Employee (String name, String address, int salary){

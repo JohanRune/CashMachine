@@ -9,10 +9,10 @@ import java.util.List;
  * Project: IntelliJ IDEA
  * Copyright: MIT
  */
-public class Loan extends Interest{
+public class Loan extends Interest implements BankData2{
 
-    public Loan (int loanNumber, double interest, String startDate, Employee employeeWhoAccepted) {
-        super (loanNumber, interest, startDate, employeeWhoAccepted);
+    public Loan (int loanNumber, double interest, String startDate, Employee employeeWhoAccepted, double balance) {
+        super (loanNumber, interest, startDate, employeeWhoAccepted, balance);
     }
 
 }

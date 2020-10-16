@@ -1,3 +1,5 @@
+import java.io.Serializable;
+
 /**
  * Created by Johan Rune
  * Date: 2020-10-01
@@ -5,7 +7,7 @@
  * Project: IntelliJ IDEA
  * Copyright: MIT
  */
-public class Person {
+public class Person implements BankData2, Serializable {
     private String name;
     private String address;
 

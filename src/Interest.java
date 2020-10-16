@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
@@ -9,18 +10,28 @@ import java.util.Date;
  * Project: IntelliJ IDEA
  * Copyright: MIT
  */
-public class Interest {
+public class Interest implements Serializable {
     private int numberAccountLoan; //konto eller lånenummer
     private double interest; //ränta
     private String startDate;
     private String stopDate;
     private Person whoChangedInterest;
+    private double balance; //amount of money
 
-    public Interest (int Number, double interest, String startDate, Employee employee){
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public Interest (int Number, double interest, String startDate, Employee employee, double balance){
         this.numberAccountLoan = Number;
         this.interest = interest;
         this.startDate = startDate;
         this.whoChangedInterest = employee;
+        this.balance = balance;
     }
 
     public int getNumberAccountLoan() {
