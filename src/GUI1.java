@@ -28,8 +28,8 @@ public class GUI1 extends JFrame implements ActionListener{
     JPanel customerMessage = new JPanel();
     JPanel buttons = new JPanel();
 
-    JTextArea textAreaBank = new JTextArea();
-    JTextArea textAreaCustomer = new JTextArea();
+    JTextArea textAreaBank = new JTextArea(10, 2);
+    JTextArea textAreaCustomer = new JTextArea(10, 2);
     Customer customer;
 
     GUI1(Customer customer){
@@ -41,6 +41,8 @@ public class GUI1 extends JFrame implements ActionListener{
         add("Center", customerMessage);
         add("South", buttons);
 
+        bankMessage.add(textAreaBank);
+        customerMessage.add(textAreaCustomer);
         buttons.setLayout(new GridLayout(4, 4));
 
         buttons.add(button1);
@@ -59,11 +61,20 @@ public class GUI1 extends JFrame implements ActionListener{
         buttons.add(button0);
         buttons.add(space2);
 
-
         button1.addActionListener(this);
+        button2.addActionListener(this);
+        button3.addActionListener(this);
+        button4.addActionListener(this);
+        button5.addActionListener(this);
+        button6.addActionListener(this);
+        button7.addActionListener(this);
+        button8.addActionListener(this);
+        button9.addActionListener(this);
+        button0.addActionListener(this);
+        cancel.addActionListener(this);
+        exit.addActionListener(this);
+        enter.addActionListener(this);
 
-
-        ;
         this.pack();
         this.setLocation(1000, 500);
         this.setVisible(true);
