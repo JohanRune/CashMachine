@@ -37,7 +37,7 @@ public class GUI1 extends JFrame implements ActionListener{
         this.account = account;
 
 
-        textAreaBank.setText("För salod, välj 1 och enter, för uttag, välj 2 och enter");
+        textAreaBank.setText("For balance, press 1. For withdrawal, press 2");
         JPanel p = new JPanel();
         setLayout(new BorderLayout());
         add("North", bankMessage);
@@ -78,7 +78,8 @@ public class GUI1 extends JFrame implements ActionListener{
         exit.addActionListener(this);
         enter.addActionListener(this);
 
-        this.pack();
+
+        this.setSize(400, 250);
         this.setLocation(200, 200);
         this.setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -87,26 +88,11 @@ public class GUI1 extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e){
         //final int button1=1, button2=2;
         if (e.getSource().equals(button1)) {
-            textAreaBank.setText("Saldot är " + account.getBalance());
+            textAreaBank.setText("The balance is " + account.getBalance());
         }
         if (e.getSource().equals(button2)) {
-            GUIuttag guiUttag = new GUIuttag(account, "Ange hur stort uttag Du vill göra");
+            GUIuttag guiUttag = new GUIuttag(account, "Please state how large withdrawal you would like to make");
         }
 
-
-
-
-
-
-        if (label.getText().equalsIgnoreCase("Hej")){
-            label.setText("Hopp");
-            //GUI2 gui2 = new GUI2(customer);
-        }
-        else{
-            label.setText("Hej");
-        }
     }
-
-
-
 }

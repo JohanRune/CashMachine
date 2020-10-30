@@ -31,6 +31,8 @@ public class GUIuttag extends JFrame implements ActionListener {
     JTextArea textAreaCustomer = new JTextArea(2, 10);
     //Customer customer;
     Account account;
+    StringBuilder amount = new StringBuilder();
+
 
     GUIuttag(Account account, String message) {
         this.account = account;
@@ -77,15 +79,13 @@ public class GUIuttag extends JFrame implements ActionListener {
         exit.addActionListener(this);
         enter.addActionListener(this);
 
-        this.pack();
+        this.setSize(400, 250);
         this.setLocation(200, 200);
         this.setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
     public void actionPerformed(ActionEvent e) {
-        StringBuilder amount = new StringBuilder();
-
 
         if (e.getSource().equals(button1)) {
             amount.append("1");
