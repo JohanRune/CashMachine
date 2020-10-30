@@ -109,24 +109,6 @@ public class Sprint1_5_CashMachine {
         //      + ChronoUnit.DAYS.between(Olle.accounts.get(0).getStartDate(), Olle.accounts.get(0).getStopDate());
 
 */
-        /*
-        //test av datum
-        LocalDate firstDate = LocalDate.parse("2015-01-02");
-        //String firstDate = "2015-01-02"; //fungerar inte.
-        System.out.println(firstDate);
-        //LocalDate secondDate = LocalDate.parse("2017-01-25");
-        LocalDate secondDate = LocalDate.of(2017, 01, 25);
-
-        LocalDate date = LocalDate.of(2020, 1, 8);
-        System.out.println(date);
-
-        System.out.println("Dagar emellan: " + ChronoUnit.DAYS.between(firstDate, secondDate));
-        System.out.println("Antal dagar: " + a1.daysBetweenTwoDates("2013-10-01", "2018-10-01"));
-
-        LocalDate date3 = LocalDate.of(2017, 01, 15);
-        LocalDate dateToday = LocalDate.now();
-        System.out.println("Idag är det datum " + dateToday);
-        */
 
             }
 }
