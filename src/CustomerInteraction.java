@@ -39,7 +39,7 @@ public class CustomerInteraction {
         System.out.println("konto att dra ifrån " + accountToWithdrawFrom.getNumberAccountLoan() + ". Saldo " + accountToWithdrawFrom.getBalance());
 
 
-        GUI1 gui1 = new GUI1(customers.get(0));
+        GUI1 gui1 = new GUI1(accountToWithdrawFrom);
 
 
 

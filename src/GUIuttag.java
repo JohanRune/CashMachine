@@ -3,7 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-public class GUI1 extends JFrame implements ActionListener{
+public class GUIuttag extends JFrame implements ActionListener{
 
 
 
@@ -33,11 +33,11 @@ public class GUI1 extends JFrame implements ActionListener{
     //Customer customer;
     Account account;
 
-    GUI1(Account account){
+    GUIuttag(Account account){
         this.account = account;
 
 
-        textAreaBank.setText("För salod, välj 1 och enter, för uttag, välj 2 och enter");
+        textAreaBank.setText("Ange hur stort uttag Du vill göra");
         JPanel p = new JPanel();
         setLayout(new BorderLayout());
         add("North", bankMessage);
@@ -85,27 +85,74 @@ public class GUI1 extends JFrame implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e){
-        //final int button1=1, button2=2;
+        StringBuilder amount = new StringBuilder();
+
+
         if (e.getSource().equals(button1)) {
-            textAreaBank.setText("Saldot är " + account.getBalance());
+            amount.append("1");
+            textAreaCustomer.setText(amount.toString());
         }
         if (e.getSource().equals(button2)) {
-            GUIuttag guiUttag = new GUIuttag(account);
+            amount.append("2");
+            textAreaCustomer.setText(amount.toString());
+        }
+
+        if (e.getSource().equals(button3)) {
+            amount.append("3");
+            textAreaCustomer.setText(amount.toString());
+        }
+
+        if (e.getSource().equals(button4)) {
+            amount.append("4");
+            textAreaCustomer.setText(amount.toString());
+        }
+
+        if (e.getSource().equals(button5)) {
+            amount.append("5");
+            textAreaCustomer.setText(amount.toString());
+        }
+
+        if (e.getSource().equals(button6)) {
+            amount.append("6");
+            textAreaCustomer.setText(amount.toString());
+        }
+
+        if (e.getSource().equals(button7)) {
+            amount.append("7");
+            textAreaCustomer.setText(amount.toString());
+        }
+
+        if (e.getSource().equals(button8)) {
+            amount.append("8");
+            textAreaCustomer.setText(amount.toString());
+        }
+
+        if (e.getSource().equals(button9)) {
+            amount.append("9");
+            textAreaCustomer.setText(amount.toString());
+        }
+
+        if (e.getSource().equals(button0)) {
+            amount.append("0");
+            textAreaCustomer.setText(amount.toString());
+        }
+
+
+        if (e.getSource().equals(enter)){
+                if (Integer.parseInt(amount.toString()) > account.getBalance()){
+                    System.out.println("Too large amount. The balance is " + account.getBalance() + ". Try again");
+                    GUIuttag guIuttag = new GUIuttag(account);
+                }
+                account.setBalance(account.getBalance() - Integer.parseInt(amount.toString()));
         }
 
 
 
 
-
-
-        if (label.getText().equalsIgnoreCase("Hej")){
-            label.setText("Hopp");
-            //GUI2 gui2 = new GUI2(customer);
-        }
-        else{
-            label.setText("Hej");
-        }
     }
+
+
+
 
 
 
