@@ -1,4 +1,3 @@
-import org.w3c.dom.ls.LSOutput;
 //
 import java.util.List;
 import java.util.Scanner;
@@ -25,6 +24,54 @@ public class CustomerInteraction {
         String name = scanner.nextLine();
         Customer customer = identifyCustomer(name);
         System.out.println("Välj i menyn");
+
+
+        int choiceOfAccount;
+        Account accountToWithdrawFrom;
+
+        System.out.println("Vilket konto gäller det?");
+        for (int i = 1; i <= customer.getAccounts().size(); i++) {
+            System.out.print(i + " ");
+            System.out.println(customer.getAccounts().get(i - 1).getNumberAccountLoan());
+        }
+        choiceOfAccount = scanner.nextInt();
+        accountToWithdrawFrom = customer.getAccounts().get(choiceOfAccount - 1);
+        System.out.println("konto att dra ifrån " + accountToWithdrawFrom.getNumberAccountLoan() + ". Saldo " + accountToWithdrawFrom.getBalance());
+
+
+
+
+    }
+
+
+
+
+    public Customer identifyCustomer (String name){
+        System.out.println("hej hej");
+        System.out.println("storlek array " + customers.size());
+        System.out.println("index 2 " + customers.get(2).getName());
+        System.out.println("namnet som är indata " + name);
+        for (int i = 0; i < customers.size(); i++) {
+            System.out.println("index: " + i);
+            if ((customers.get(i).getName()).equalsIgnoreCase(name.trim())) {
+                System.out.println("Kundens namn: " + customers.get(i).getName());
+                return customers.get(i);
+            }
+
+        }
+        System.out.println("Ni har inga konton i banken. Programmet avslutas");
+        System.exit(0);
+        return null;
+    }
+
+
+}
+
+        //  ************************
+
+
+        /*
+
         System.out.println("För att se kontoöversikt, tryck 1");
         System.out.println("För att ta ut pengar, tryck 2");
         int översiktEllerUttag = scanner.nextInt();
@@ -90,3 +137,5 @@ public class CustomerInteraction {
     }
 
 }
+
+         */
