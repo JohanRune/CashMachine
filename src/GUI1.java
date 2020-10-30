@@ -90,7 +90,7 @@ public class GUI1 extends JFrame implements ActionListener{
             textAreaBank.setText("Saldot är " + account.getBalance());
         }
         if (e.getSource().equals(button2)) {
-            GUIuttag guiUttag = new GUIuttag(account);
+            GUIuttag guiUttag = new GUIuttag(account, "Ange hur stort uttag Du vill göra");
         }
 
 

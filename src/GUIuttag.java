@@ -3,8 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-public class GUIuttag extends JFrame implements ActionListener{
-
+public class GUIuttag extends JFrame implements ActionListener {
 
 
     JLabel label = new JLabel("Hej");
@@ -33,11 +32,11 @@ public class GUIuttag extends JFrame implements ActionListener{
     //Customer customer;
     Account account;
 
-    GUIuttag(Account account){
+    GUIuttag(Account account, String message) {
         this.account = account;
 
 
-        textAreaBank.setText("Ange hur stort uttag Du vill göra");
+        textAreaBank.setText(message);
         JPanel p = new JPanel();
         setLayout(new BorderLayout());
         add("North", bankMessage);
@@ -84,7 +83,7 @@ public class GUIuttag extends JFrame implements ActionListener{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
-    public void actionPerformed(ActionEvent e){
+    public void actionPerformed(ActionEvent e) {
         StringBuilder amount = new StringBuilder();
 
 
@@ -138,22 +137,24 @@ public class GUIuttag extends JFrame implements ActionListener{
         }
 
 
-        if (e.getSource().equals(enter)){
-                if (Integer.parseInt(amount.toString()) > account.getBalance()){
-                    System.out.println("Too large amount. The balance is " + account.getBalance() + ". Try again");
-                    GUIuttag guIuttag = new GUIuttag(account);
-                }
-                account.setBalance(account.getBalance() - Integer.parseInt(amount.toString()));
+        if (e.getSource().equals(enter)) {
+
+            System.out.println("Stringbuilder: " + amount.toString());
+            System.out.println("textArea " + textAreaCustomer.getText());
+
+            //if (Integer.parseInt(amount.toString()) > account.getBalance()){
+            if (Integer.parseInt(textAreaCustomer.getText()) > account.getBalance()) {
+                System.out.println("Too large amount. The balance is " + account.getBalance() + ". Try again");
+                GUIuttag guIuttag = new GUIuttag(account, "Too large amount. The balance is " + account.getBalance() + ". Try again");
+
+            } else if (Integer.parseInt(textAreaCustomer.getText()) <= account.getBalance()) {
+                account.setBalance(account.getBalance() - Integer.parseInt(textAreaCustomer.getText()));
+                textAreaBank.setText("Here are your money. The balance after the withdrawal is " + account.getBalance());
+            }
+
+
         }
 
 
-
-
     }
-
-
-
-
-
-
 }
