@@ -11,6 +11,8 @@ import java.util.List;
  */
 public class Account extends Interest implements BankData2{
     private List<Account> previousAccounts;
+    private Customer customer;
+
 
     public List<Account> getPreviousAccounts() {
         return previousAccounts;
@@ -27,8 +29,9 @@ public class Account extends Interest implements BankData2{
 
 
 
-    public Account (int accountNumber, double interest, String startDate, Employee whoChangedInterest, double balance) {
+    public Account (int accountNumber, double interest, String startDate, Employee whoChangedInterest, double balance, Customer customer) {
         super (accountNumber, interest, startDate, whoChangedInterest, balance);
+        this.customer = customer;
     }
 
 }

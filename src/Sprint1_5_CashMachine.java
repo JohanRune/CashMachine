@@ -48,10 +48,10 @@ public class Sprint1_5_CashMachine {
         bankData.add(Stina);
         bankData.add(Nils);
 
-        Account a1 = new Account(1234, 1.2, "2019-08-05", Stina, 10_000);
-        Account a2 = new Account(2345, 1.4, "2020-08-10", Nils, 15_000);
-        Account a3 = new Account(9876, 1.3, "2019-10-02", Nils, 24_000);
-        Account a4 = new Account(7623, 1.3, "2018-11-12", Stina, 5_000);
+        Account a1 = new Account(1234, 1.2, "2019-08-05", Stina, 10_000, Olle);
+        Account a2 = new Account(2345, 1.4, "2020-08-10", Nils, 15_000, Anna);
+        Account a3 = new Account(9876, 1.3, "2019-10-02", Nils, 24_000, Monica);
+        Account a4 = new Account(7623, 1.3, "2018-11-12", Stina, 5_000, Monica);
         Olle.addAccount(a1);
         Anna.addAccount(a2);
         Monica.addAccount(a3);
@@ -67,7 +67,7 @@ public class Sprint1_5_CashMachine {
         bankData.add(a4);
         System.out.println("Monicas ena konto " + Monica.getAccounts().get(0).getBalance());
 
-        bankData = Olle.changeInterestOnAccount(a1, 1.3, "2020-09-12", Nils, bankData);
+        bankData = Olle.changeInterestOnAccount(a1, 1.3, "2020-09-12", Nils, bankData, Olle);
 
         System.out.println("Slutdatum: " + a1.getStopDate());
 

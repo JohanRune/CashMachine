@@ -63,9 +63,9 @@ public class Customer extends Person implements BankData2 {
     }
 
     public List<BankData2> changeInterestOnAccount (Account account, double newInterest, String date,
-                                         Employee employee, List<BankData2> list){ //detta startar ett nytt kontoobjekt
+                                         Employee employee, List<BankData2> list, Customer customer){ //detta startar ett nytt kontoobjekt
         account.setStopDate(date);
-        Account accountNew = new Account(account.getNumberAccountLoan(), newInterest, date, employee, account.getBalance());
+        Account accountNew = new Account(account.getNumberAccountLoan(), newInterest, date, employee, account.getBalance(), customer);
         accountNew.setPreviousAccounts(account.getPreviousAccounts());
         addAccount(accountNew); //se metod ovan.
         list.add(accountNew); //ta bort? Justera?
